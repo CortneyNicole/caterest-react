@@ -11,7 +11,7 @@ export default class Item extends React.Component {
       overlay: {
         backgroundColor: "transparent",
         height: "100%",
-        width: "100%",
+        width: "236px",
         padding: "0.2em",
         position: "relative"
       },
@@ -43,43 +43,6 @@ export default class Item extends React.Component {
 
 
 /*
-const tooltip = (
-  <Tooltip id="tooltip">{this.props.picture.description}</Tooltip>
-);
-
-const positionerInstance = (
-  <ButtonToolbar>
-    <OverlayTrigger placement="left" overlay={tooltip}>
-      <Button bsStyle="default">Holy guacamole!</Button>
-    </OverlayTrigger>
-
-    <OverlayTrigger placement="top" overlay={tooltip}>
-      <Button bsStyle="default">Holy guacamole!</Button>
-    </OverlayTrigger>
-
-    <OverlayTrigger placement="bottom" overlay={tooltip}>
-      <Button bsStyle="default">Holy guacamole!</Button>
-    </OverlayTrigger>
-
-    <OverlayTrigger placement="right" overlay={tooltip}>
-      <Button bsStyle="default">Holy guacamole!</Button>
-    </OverlayTrigger>
-  </ButtonToolbar>
-);
-
-
-
-import MasonryInfiniteScroller from 'react-masonry-infinite';
-
-...
-<MasonryInfiniteScroller hasMore={this.state.hasMore} loadMore={() => this.setState({ elements: this.state.elements.push("Element") })}>
-    {
-        this.state.elements.map((el, index) =>
-            <div key={index}/>
-        )
-    }
-</MasonryInfiniteScroller>
-
     {
         "access": [],
         "additional_hide_reasons": [],

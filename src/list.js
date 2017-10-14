@@ -14,7 +14,7 @@ export default class List extends React.Component {
     return (
         <Grid
           columnWidth={236}
-          fitWidth={false}
+          fitWidth={true}
           gutter={5}
           loadMore={() => {
               console.log("calling load more")
@@ -34,5 +34,4 @@ export default class List extends React.Component {
     )
   }
 }
-
 

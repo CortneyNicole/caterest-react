@@ -6,5 +6,5 @@ import pins from './pins_formatted.json';
 
 // ========================================
 
-ReactDOM.render(<List pictures={pins}/>, document.getElementById("root"));
+ReactDOM.render(<List pictures={[]}/>, document.getElementById("root"));
 

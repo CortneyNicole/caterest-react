@@ -10,16 +10,25 @@ export default class Item extends React.Component {
     const styles = {
       overlay: {
         backgroundColor: "transparent",
-        minHeight: "100px",
+        minHeight: "150px",
         height: "100%",
-        width: "236px",
+        // Width: "210px",
         padding: "0.2em",
-        position: "relative"
+        position: "relative",
+        borderRadius: "15px"
       },
       tooltip: (b) => ({
         display: b ? "initial" : "none",
         position: "absolute",
-        backgroundColor: "rgba(255, 255, 255, 0.3)"
+        bottom: "8px",
+        borderRadius: "15px",
+        maxWidth: "203px",
+        minWidth: "203px",
+        textAlign: "center",
+        color: "#fff",
+        wordWrap: "break-word",
+        padding: "6px",
+        backgroundColor: "rgba(0, 0, 0, 0.3)"
       })
     }
     return (
@@ -29,7 +38,7 @@ export default class Item extends React.Component {
         onMouseOut={ () => this.setState({ showDescription: false }) }
       >
         <div style={ styles.tooltip(this.state.showDescription) } >{ this.props.picture.description }</div>
-        <img src={this.props.picture.images["236x"].url} alt="image"/>
+        <img className="image" src={this.props.picture.images["236x"].url} alt="image"/>
       </div>
     )
   }

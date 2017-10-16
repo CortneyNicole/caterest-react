@@ -16,17 +16,7 @@ export default class List extends React.Component {
           fitWidth={true}
           gutter={5}
           loadMore={() => {
-              // this.setState({pictures: this.state.pictures.concat(data)});
-              var me = this;
-            //   debugger
-            // fetch('new_pins.json').then(function(response) {
-            //   console.dir(response);
-            //   debugger
-            //   return response.json();
-            // }).then(function(data) {
-            //   console.dir(data);
-            // });
-
+            var me = this;
             var myRequest = new Request('new_pins' + this.state.counter + '.json');
             me.setState({counter: (this.state.counter + 1) % 3});
             fetch(myRequest)
@@ -43,7 +33,7 @@ export default class List extends React.Component {
         >
           { this.state.pictures.map((picture, index) => {
             return (
-              <GridItem style={ { margin: "auto" } } key={index}>
+              <GridItem key={index}>
                 <Item picture={picture}/>
               </GridItem>)
           }) }

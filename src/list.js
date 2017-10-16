@@ -6,9 +6,8 @@ export default class List extends React.Component {
   constructor(props) {
     super(props)
   }
-  state = {pictures: []}
+  state = {pictures: [], counter: 0}
   componentDidMount() {
-    this.setState({pictures: this.props.pictures})
   }
   render() {
     return (
@@ -17,8 +16,16 @@ export default class List extends React.Component {
           fitWidth={true}
           gutter={5}
           loadMore={() => {
-              console.log("calling load more")
-              this.setState({pictures: this.state.pictures.concat(this.props.pictures)})
+            var me = this;
+            var myRequest = new Request('new_pins' + this.state.counter + '.json');
+            me.setState({counter: (this.state.counter + 1) % 3});
+            fetch(myRequest)
+              .then(function(response) { return response.json(); })
+              .then(function(data) {
+                me.setState({pictures: me.state.pictures.concat(data)});
+                console.log(data); // data is defined as a varaible on line 34
+
+          });
           } }
           limit={6}
           scrollThreshold={400}
@@ -26,7 +33,7 @@ export default class List extends React.Component {
         >
           { this.state.pictures.map((picture, index) => {
             return (
-              <GridItem style={ { margin: "auto" } } key={index}>
+              <GridItem key={index}>
                 <Item picture={picture}/>
               </GridItem>)
           }) }

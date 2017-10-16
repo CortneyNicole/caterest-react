@@ -1,11 +1,13 @@
 import React from 'react';
 
+//creates the item elements
 export default class Item extends React.Component {
+  //show description starts false
   state = { showDescription: false }
   constructor(props) {
     super(props)
   }
-
+//modular css
   render() {
     const styles = {
       overlay: {
@@ -32,6 +34,8 @@ export default class Item extends React.Component {
         wordWrap: "break-word"
       })
     }
+
+    //if mouse hovers over item elemt show description
     return (
       <div
         style={ styles.overlay }

@@ -10,25 +10,26 @@ export default class Item extends React.Component {
     const styles = {
       overlay: {
         backgroundColor: "transparent",
-        minHeight: "150px",
+        borderRadius: "15px",
         height: "100%",
-        // Width: "210px",
+        minHeight: "150px",
         padding: "0.2em",
-        position: "relative",
-        borderRadius: "15px"
+        position: "relative"
       },
       tooltip: (b) => ({
-        display: b ? "initial" : "none",
-        position: "absolute",
+        backgroundColor: "rgba(0, 0, 0, 0.3)",
+        borderBottomLeftRadius: "15px",
+        borderBottomRightRadius: "15px",
         bottom: "8px",
-        borderRadius: "15px",
+        color: "#fff",
+        display: b ? "initial" : "none",
+        fontFamily: "Helvetica",
         maxWidth: "203px",
         minWidth: "203px",
-        textAlign: "center",
-        color: "#fff",
-        wordWrap: "break-word",
         padding: "6px",
-        backgroundColor: "rgba(0, 0, 0, 0.3)"
+        position: "absolute",
+        textAlign: "center",
+        wordWrap: "break-word"
       })
     }
     return (

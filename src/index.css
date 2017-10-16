@@ -1,3 +1,13 @@
+.logo {
+  color: #555;
+  display: block;
+  font-family: Helvetica;
+  margin: auto;
+  padding: 20px;
+  width: 30%;
+
+}
+
 .image {
   border-radius: 15px;
   width: 215px;
